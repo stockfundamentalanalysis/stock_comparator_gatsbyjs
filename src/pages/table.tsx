@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import { useTable, useSortBy } from "react-table";
 import ReactTable from "react-table"; 
 import json from '../data/sfa_easy.json'
+import MaterialReactTable from 'material-react-table';
 
 function Table({ columns, data }) {
   const {
