@@ -67,7 +67,7 @@ export default function index() {
     () => [
       {
         Header: "Ticker",
-        accessor: "Ticker"
+        accessor:          "Ticker"
       },
       {
         Header: "CompanyName",
