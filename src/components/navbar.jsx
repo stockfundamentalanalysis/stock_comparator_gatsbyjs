@@ -36,9 +36,13 @@ const itemList = [
       to: "/" 
     },
     {
-      text: "About",
+      text: "EasyMode",
       to: "/table3"
     },
+    {
+        text: "AdvancedMode",
+        to: "/table5"
+      },
     {
         text: "Contact",
         to: "/contact"
@@ -64,9 +68,9 @@ const Navbar = () => {
                 component="h2"
 
                 >
-                    HBSales
+                    Stock Comparator
                 </Typography>
-                <Box sx={{display: { xs: 'block', sm: 'none' } }}>
+                <Box sx={{display: { xs: 'flex', sm: 'none' } }}>
                 </Box>
                 <ListMenu>
                     {itemList.map( ( item ) => {

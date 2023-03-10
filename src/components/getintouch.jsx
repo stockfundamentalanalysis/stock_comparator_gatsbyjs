@@ -2,12 +2,23 @@ import React from 'react'
 import {  
     Button,
     Stack,
+    Box,
+    styled,
+    Typography,
+    Text
 } from '@mui/material'
 import Title from './Title'
 import Paragraph from './Paragraph'
 import { Link } from "gatsby"
 
 const GetInTouch = () => {
+    const CustomTypography = styled(Typography) ({
+        fontSize: '1.1rem',
+        textAlign: 'start',
+        lineHeight: '1.5',
+        color: '#515151',
+        marginTop: '1.5rem',
+    })
 
     return (
         <Stack 
@@ -20,23 +31,29 @@ const GetInTouch = () => {
             mx: 6,
         }}
         >
-            <Title 
-            text={
-                'Contact us to buy property'
-                } 
-            textAlign={'center'}
-            />
-            <Paragraph 
-            text={
-                'It is our commitment to ensure a professional and enjoyable \
-                new home buying experience for you. \
-                If you want to get a home to start living as a family in an \
-                area that you love click the button below.'
-            }
-            maxWidth = {'sm'}
+            
+            
+            <Box maxWidth = {'sm'}
             mx={0}
-            textAlign={'center'}
-            />
+            textAlign={'center'}>
+                <Title 
+                    text={
+                    'Contact us to get the premium version of our software'
+                    } 
+                textAlign={'center'}
+                />
+
+                <CustomTypography >
+                    The premium version of our software is available for a monthly fee<br />
+                    and includes the following features:<br />
+                    1. Target price calculation for any stock<br />
+                    2. Target price adaptation based on your growth estimation<br />
+                    3. Target price adaptation based on other factors like interest rates a geopolical risks
+                </CustomTypography>     
+            
+
+                
+            </Box>
             <Button component={Link} 
             to={'/contact'}
             variant="contained" 

@@ -11,7 +11,7 @@ import {
   ListItemText,
 } from '@mui/material'
 // rotas
-import { Link } from 'react-router-dom';
+import { Link } from "gatsby";
 // icons
 import EmailIcon from '@mui/icons-material/Email';
 import HomeIcon from '@mui/icons-material/Home';

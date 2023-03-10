@@ -10,10 +10,8 @@ const Header = () => {
         minHeight: '80vh',
         display: 'flex',
         justifyContent: 'center',
-        // tamanhos
         gap: theme.spacing(2),
         paddingTop: theme.spacing(10),
-        // cor de fundo
         backgroundColor: 'orange',
         [theme.breakpoints.down('md')]: {
             flexDirection: 'column',
@@ -48,7 +46,7 @@ const Header = () => {
                     color: '#fff',
                 }}
                 >
-                    We'll build house of your dream
+                    Get the fair price of your stock
                 </Typography>
 
                 <Typography
@@ -60,8 +58,7 @@ const Header = () => {
                     color: '#fff',
                 }}
                 >
-                    We have 9000 more review and our customers
-                    trust on out property and quality products.
+                    More than 500 stocks analyzed and updated daily. Arficial Intelligence analysis based on companies' financial statements and market data.
                 </Typography>
 
                 <Box>

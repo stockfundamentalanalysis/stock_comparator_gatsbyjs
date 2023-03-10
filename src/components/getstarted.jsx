@@ -7,8 +7,8 @@ import {
 } from '@mui/material'
 import Title from './title'
 // img
-import imgDetail from '../assets/pexels-alex-staudinger-1732414.jpg';
-import imgDetail2 from '../assets/pexels-pixabay-271816.jpg';
+import imgDetail from '../images/growth_arrow.jpg';
+import imgDetail2 from '../images/growth_stack.jpg';
 
 
 const GetStarted = () => {
@@ -47,14 +47,15 @@ const GetStarted = () => {
                 >
                     <Title
                     text={
-                        'We make it easy for tenants and landlords'
+                        'Obtain the target price of any stock'
                     }
                     textAlign={'start'}
                     />
                     <CustomTypography>
-                        Listing are updated continuously so you<br />
-                        won't miss out on homes that just hit<br />
-                        market until you find your perfect home.
+                        Target prices are calculated based on companies<br />
+                        annual reports using fundamental analysis<br />
+                        and artificaial intelligence.  <br />
+                        
                     </CustomTypography> 
                 </Box>
 
@@ -92,14 +93,14 @@ const GetStarted = () => {
                 >
                     <Title
                     text={
-                        'Match with the best agent'
-                        
+                        'Limit your risk on your investments'
                     }
                     textAlign={'start'}
                     />
                     <CustomTypography>
-                        Our verified partner Agents are local experts who<br /> 
-                        earn an average of 4.8/5 stars from buyers and sellers.
+                        The potential earnings or losses of a stock <br /> 
+                        eare updated every day based on stock price <br />
+                        and company financial report updates. <br />
                     </CustomTypography>
                 </Box>
             </CustomGridItem>

@@ -6,6 +6,7 @@ import MaterialReactTable, {
 import json from '../data/sfa_easy.json'
 import { red } from '@mui/material/colors'
 import { Box } from '@mui/material'
+import { palette } from '@mui/system'
 import NavBar from '../components/navbar'
 import '../styles/global.css'
 
@@ -41,6 +42,8 @@ const Example = () => {
   const green = [0, 255, 0]
   const white = [255, 255, 255]
   const red = [255, 0, 0]
+  const black = [0, 0, 0]
+  const grey = [128, 128, 128]
 
   //should be memoized or stable
   const columns = useMemo(
@@ -58,8 +61,13 @@ const Example = () => {
         accessorKey: 'CompanyName',
       },
       {
+        header: 'Sector',
+        accessorKey: 'Sector',
+      },
+      {
         header: 'Potential',
         accessorKey: 'Potential',
+        size: 50,
         Cell: ({ cell }) => {
           const value = cell.getValue()
           const weight = calculateWeight(value, -1, 1.5)
@@ -70,9 +78,12 @@ const Example = () => {
               sx={{
                 backgroundColor: color,
                 borderRadius: '0.25rem',
-                color: 'rgba(0, 0, 0, 0.87)',
+
                 maxWidth: '9ch',
                 p: '0.25rem',
+                fontWeight: 'bold',
+                textAlign: 'center',
+                color: white,
               }}
             >
               {Math.round(cell.getValue<number>() * 100)} %
@@ -98,13 +109,23 @@ const Example = () => {
       {
         header: 'TargetPrice',
         accessorKey: 'TargetPrice',
+        size: 50,
         Cell: ({ cell }) => {
-          return <div>{Math.round(cell.getValue() * 100) / 100} </div>
+          return (
+            <Box
+              sx={{
+                textAlign: 'left',
+              }}
+            >
+              {Math.round(cell.getValue() * 100) / 100}{' '}
+            </Box>
+          )
         },
       },
       {
         header: 'DebtQualityScore',
         accessorKey: 'DebtQualityScore',
+        size: 50,
         Cell: ({ cell }) => {
           const value = cell.getValue()
           const weight = calculateWeight(value, 0, 1)
@@ -119,6 +140,8 @@ const Example = () => {
                 color: 'rgba(0, 0, 0, 0.87)',
                 maxWidth: '9ch',
                 p: '0.25rem',
+                textAlign: 'center',
+                fontWeight: 'light',
               }}
             >
               {Math.round(cell.getValue<number>() * 100)} %
@@ -129,6 +152,7 @@ const Example = () => {
       {
         header: 'EarningsScore',
         accessorKey: 'EarningsScore',
+        size: 50,
         Cell: ({ cell }) => {
           const value = cell.getValue()
           const weight = calculateWeight(value, 0, 1)
@@ -142,6 +166,8 @@ const Example = () => {
                 color: 'rgba(0, 0, 0, 0.87)',
                 maxWidth: '9ch',
                 p: '0.25rem',
+                textAlign: 'center',
+                fontWeight: 'light',
               }}
             >
               {Math.round(cell.getValue<number>() * 100)} %
@@ -152,6 +178,7 @@ const Example = () => {
       {
         header: 'ProfitabilityScore',
         accessorKey: 'ProfitabilityScore',
+        size: 50,
         Cell: ({ cell }) => {
           const value = cell.getValue()
           const weight = calculateWeight(value, 0, 1)
@@ -165,6 +192,8 @@ const Example = () => {
                 color: 'rgba(0, 0, 0, 0.87)',
                 maxWidth: '9ch',
                 p: '0.25rem',
+                textAlign: 'center',
+                fontWeight: 'light',
               }}
             >
               {Math.round(cell.getValue<number>() * 100)} %
@@ -175,6 +204,7 @@ const Example = () => {
       {
         header: 'GrowthScore',
         accessorKey: 'GrowthScore',
+        size: 50,
         Cell: ({ cell }) => {
           const value = cell.getValue()
           const weight = calculateWeight(value, 0, 1)
@@ -188,16 +218,14 @@ const Example = () => {
                 color: 'rgba(0, 0, 0, 0.87)',
                 maxWidth: '9ch',
                 p: '0.25rem',
+                textAlign: 'center',
+                fontWeight: 'light',
               }}
             >
               {Math.round(cell.getValue<number>() * 100)} %
             </Box>
           )
         },
-      },
-      {
-        header: 'Sector',
-        accessorKey: 'Sector',
       },
     ],
     []
@@ -206,7 +234,11 @@ const Example = () => {
   return (
     <>
       <NavBar />
-      <MaterialReactTable columns={columns} data={data} />
+      <MaterialReactTable
+        columns={columns}
+        data={data}
+        initialState={{ density: 'compact' }}
+      />
     </>
   )
 }
